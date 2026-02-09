@@ -1,3 +1,77 @@
+# Task-5: Dockerizing a Strapi Application
+
+## Overview
+This project demonstrates how to install a Strapi application and containerize it using Docker.
+The setup uses **Node.js 20** and a **multi-stage Docker build** to keep the image clean and efficient.
+
+This task is part of my DevOps internship learning, focusing on Docker fundamentals and application containerization.
+
+---
+
+## Tech Stack
+- Strapi (JavaScript version)
+- Node.js 20
+- Docker
+- SQLite (default database)
+
+---
+
+## Project Structure
+Task-5/
+├── Dockerfile
+├── .dockerignore
+├── .gitignore
+├── README.md
+├── package.json
+├── package-lock.json
+├── config/
+├── src/
+├── public/
+└── .env (ignored in Git for security)
+
+
+
+---
+
+## Dockerfile Explanation
+The Dockerfile uses a **multi-stage build**:
+
+- **Build Stage**
+  - Uses `node:20-alpine`
+  - Installs dependencies using `npm ci`
+- **Runtime Stage**
+  - Uses a clean Node.js image
+  - Runs Strapi in development mode
+
+This approach reduces image size and keeps runtime clean.
+
+---
+
+## How to Run the Project
+
+### 1. Build Docker Image
+```bash
+docker build -t strapi-task5 .
+docker run --name strapi-task5 -p 1337:1337 --env-file .env strapi-task5
+http://localhost:1337
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # 🚀 Getting started with Strapi
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
