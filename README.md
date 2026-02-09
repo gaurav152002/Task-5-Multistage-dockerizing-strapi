@@ -50,25 +50,32 @@ This approach reduces image size and keeps runtime clean.
 ## How to Run the Project
 
 ### 1. Build Docker Image
-```bash
+
 docker build -t strapi-task5 .
 docker run --name strapi-task5 -p 1337:1337 --env-file .env strapi-task5
 http://localhost:1337
 
 
+Environment Variables
 
+Sensitive values such as secrets and database configuration are stored in a .env file.
+This file is excluded from GitHub using .gitignore for security reasons.
 
+Learning Outcomes
 
+Understanding Docker images and containers
 
+Writing a multi-stage Dockerfile
 
+Running Strapi inside Docker
 
+Managing environment variables securely
 
+Pushing a Dockerized project to GitHub
 
+Conclusion
 
-
-
-
-
+This project successfully demonstrates how to containerize a Strapi application using Docker and Node.js 20, following best practices suitable for local development and DevOps learning.
 
 
 
